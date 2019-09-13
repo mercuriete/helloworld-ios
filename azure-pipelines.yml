@@ -23,3 +23,12 @@ steps:
     configuration: 'Release'
     xcWorkspacePath: 'helloworld-ios-app.xcworkspace'
     xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath
+- task: CopyFiles@2
+  inputs:
+    Contents: '**/*.ipa'
+    TargetFolder: '$(build.artifactStagingDirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'artifacts'
+    publishLocation: 'Container'
