@@ -18,7 +18,7 @@ steps:
 - task: Xcode@5
   inputs:
     actions: 'build'
-    scheme: ''
+    scheme: 'helloworld-ios-app'
     sdk: 'iphoneos'
     configuration: 'Release'
     xcWorkspacePath: 'helloworld-ios-app.xcworkspace'
